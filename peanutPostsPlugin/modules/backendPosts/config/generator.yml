@@ -1,0 +1,30 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           peanutPosts
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          peanut_posts
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        sort:     [created_at, desc]
+        display:  [title, sfGuardUser, peanutCategories, status]
+        
+      filter:
+        display:  [title, author, status]
+        
+      form:
+        display:
+          Post:   [title, slug, content, excerpt, category, author, status, created_at]
+          Tags:   [_tags]
+        
+      edit:    ~
+      new:     ~

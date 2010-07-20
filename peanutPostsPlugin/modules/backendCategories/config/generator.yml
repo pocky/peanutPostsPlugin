@@ -1,0 +1,46 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           peanutCategories
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          peanut_categories
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions:             ~
+      fields:              ~
+      list:
+        display:           [id, name]
+        title:             Gestion des categories
+        
+        batch_actions:
+          order:
+            label:         Mettre à jour
+          _delete:         ~
+          
+        object_actions:
+          new:
+            label:         Ajouter enfant
+          up:
+            action:        up
+          down:
+            action:        down
+          make_root:
+            action:        makeRoot
+          _edit:           ~
+          _delete:         ~
+        actions:
+          _new:
+            label:         Ajouter racine
+            
+      filter:
+        display:           [name]
+      form:                ~ 
+      edit:
+        title:             Editer backendCategories
+      new:                 ~

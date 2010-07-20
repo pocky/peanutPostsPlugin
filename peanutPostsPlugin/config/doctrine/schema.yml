@@ -1,0 +1,33 @@
+peanutCategories:
+ actAs:
+     Sluggable:
+      fields:            [name]
+     nestedSet:
+      hasManyRoots:      true
+      rootColumnName:    root_id
+ columns:
+     name:               { type: string(255), notnull: true }
+     description:        { type: clob }
+     
+peanutPosts:
+ actAs:
+     Sluggable:
+      fields:            [title]
+     Timestampable:      ~
+     Taggable:           ~
+ columns:
+     title:              { type: string(255), notnull: true }
+     content:            { type: clob, notnull: true }
+     excerpt:            { type: clob }
+     category:           { type: integer, notnull: true }
+     author:             { type: integer, notnull: true }
+     status:             { type: string, notnull: true, values: [draft, publish], default: draft }
+ relations:
+     sfGuardUser:
+      local:             author
+      foreign:           id
+      foreignAlias:      pageAuthor
+     peanutCategories:
+      local:             category
+      foreign:           id
+      foreignAlias:      postCategory

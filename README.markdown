@@ -1,9 +1,13 @@
 # ATTENTION #
 
-Le plugin n'est pas encore terminé mais est fonctionnel en l'état.
+Le plugin n'est pas encore complètement terminé mais est fonctionnel en l'état.
 
 Le plugin requiert l'installation de [sfDoctrineActAsTaggablePlugin](http://www.symfony-project.org/plugins/sfDoctrineActAsTaggablePlugin)
 
+
+# INFORMATION #
+
+Ce plugin est optimisé pour le CMS [peanut](http://github.com/pocky/peanut) mais peut fonctionner indépendamment sur n'importe quel projet symfony. Le plugin utilise cependant l'admin-generator pour le backend alors pensez-y !
 
 # INSTALLATION #
 

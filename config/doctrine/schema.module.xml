@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<orm-designer version="1.3.3.363">
+
+  <module import-format="DoctrineYml" import-path="schema.yml" name="peanutPostsPlugin" visBkColor="15987704" visSizeX="0" visSizeX2="276" visSizeY="0" visSizeY2="175">
+    <table name="peanutCategories" visPositionX="20" visPositionY="40" visSizeX="0" visSizeX2="98" visSizeY="0" visSizeY2="59">
+      <column auto-increment="true" name="id" primary="true" type="integer"/>
+      <column name="name" required="true" size="255" type="string"/>
+      <column name="description" type="clob"/>
+      <orm-properties>
+        <attribute name="actAs">
+          <attribute name="Sluggable">
+            <attribute name="fields">[name]</attribute>
+          </attribute>
+          <attribute name="NestedSet">
+            <attribute name="hasManyRoots">true</attribute>
+            <attribute name="rootColumnName">root_id</attribute>
+          </attribute>
+        </attribute>
+      </orm-properties>
+    </table>
+    <table name="peanutPosts" visPositionX="160" visPositionY="40" visSizeX="0" visSizeX2="94" visSizeY="0" visSizeY2="115">
+      <column auto-increment="true" name="id" primary="true" type="integer"/>
+      <column name="title" required="true" size="255" type="string"/>
+      <column name="content" required="true" type="clob"/>
+      <column name="excerpt" type="clob"/>
+      <column name="category" required="true" type="integer"/>
+      <column default="draft" name="status" required="true" type="string" values="draft,publish"/>
+      <column description="Foreign key to sfGuardUser" name="author" type="integer"/>
+      <orm-properties>
+        <attribute name="actAs">
+          <attribute name="Sluggable">
+            <attribute name="fields">[title]</attribute>
+          </attribute>
+          <attribute name="Timestampable"/>
+          <attribute name="Taggable"/>
+        </attribute>
+      </orm-properties>
+    </table>
+    <foreign-key from="peanutPosts" name="FK_peanutPosts_peanutCategories_id" to="peanutCategories">
+      <foreign-key-column from="category" to="id"/>
+      <orm-properties>
+        <attribute name="foreignAlias">postCategory</attribute>
+      </orm-properties>
+    </foreign-key>
+    <foreign-key from="peanutPosts" name="FK_peanutPosts_sfGuardUser" to="sfGuardUser">
+      <foreign-key-column from="author" to="id"/>
+    </foreign-key>
+  </module>
+
+</orm-designer>

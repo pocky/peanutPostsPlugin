@@ -1,3 +1,7 @@
+ $(document).ready(function(){
+   $(".taglist a").button({icons:{primary:'ui-icon-trash'}, text: false});
+ });
+ 
  function remove_tag (tag, element) {
   remove_field = $("#peanut_posts_remove_tags");
   if ( remove_field.val() ) {

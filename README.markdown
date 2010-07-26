@@ -7,7 +7,9 @@ Le plugin requiert l'installation de [sfDoctrineActAsTaggablePlugin](http://www.
 
 # INSTALLATION #
 
-    $ git clone git://github.com/pocky/peanutPostsPlugin.git plugins/
+    $ git clone git://github.com/pocky/peanutPostsPlugin.git plugins/peanutPostsPlugin
+    $ php symfony doctrine:build --all
+    $ php symfony plugin:publish-assets
     $ php symfony cc
 
 ## Activer le plugin et ses modules ##

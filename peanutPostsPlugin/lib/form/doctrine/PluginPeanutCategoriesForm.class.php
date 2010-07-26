@@ -7,7 +7,7 @@
  * @subpackage peanutCategories
  * @version    SVN: $Id: sfDoctrineFormTemplate.php 6174 2007-11-27 06:22:40Z fabien $
  */
-abstract class PluginPeanutCategoriesForm extends BasepeanutCategoriesForm
+abstract class PluginpeanutCategoriesForm extends BasepeanutCategoriesForm
 {
   protected $parentId = null;
   

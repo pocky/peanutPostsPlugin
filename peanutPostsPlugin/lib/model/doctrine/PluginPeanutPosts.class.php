@@ -10,7 +10,7 @@
  * @author     Alexandre pocky BALMES
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
-abstract class PluginPeanutPosts extends BasepeanutPosts
+abstract class PluginpeanutPosts extends BasepeanutPosts
 {
   public function __toString()
   {

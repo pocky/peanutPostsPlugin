@@ -1,7 +1,7 @@
 <?php
 
 
-abstract class PluginPeanutPostsTable extends Doctrine_Table
+abstract class PluginpeanutPostsTable extends Doctrine_Table
 { 
   public static function getInstance()
   {

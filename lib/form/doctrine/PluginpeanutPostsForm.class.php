@@ -30,10 +30,6 @@ abstract class PluginpeanutPostsForm extends BasepeanutPostsForm
     	'filebrowserBrowseUrl'		  => '/js/filemanager/index.html',
     	'filebrowserImageBrowseUrl'	=> '/js/filemanager/index.html?type=Images',
     )));
-    
-    $this->widgetSchema['category'] = new sfWidgetFormDoctrineChoiceNestedSet(array(
-      'model'     => 'peanutCategories',
-    ));
 
     $this->widgetSchema['status'] = new sfWidgetFormChoice(array(
     	'choices'	=> Doctrine::getTable('PeanutPosts')->getStatus(),

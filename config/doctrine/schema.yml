@@ -15,12 +15,14 @@ peanutCategories:
       notnull: true
     description:
       type: clob
+      
 peanutPosts:
   actAs:
     Sluggable:
       fields: [title]
     Timestampable: 
     Taggable: 
+    Seoable: 
   columns:
     id:
       primary: true
@@ -34,9 +36,6 @@ peanutPosts:
       notnull: true
     excerpt:
       type: clob
-    category:
-      type: integer
-      notnull: true
     status:
       default: draft
       type: string
@@ -46,9 +45,27 @@ peanutPosts:
       type: integer
   relations:
     peanutCategories:
-      foreignAlias: postCategory
-      local: category
-      foreign: id
+      refClass: peanutPostsPeanutCategories
+      local: peanut_post_id
+      foreign: peanut_categories_id
     sfGuardUser:
       local: author
       foreign: id
+      
+peanutPostsPeanutCategories:
+  columns:
+    peanut_post_id:
+      type: integer
+      primary: true
+    peanut_categories_id:
+      type: integer
+      primary: true
+  relations:
+    peanutPosts:
+      local: peanut_post_id
+      foreignAlias: peanutCategory
+      onDelete: cascade
+    peanutCategories:
+      local: peanut_categories_id
+      foreignAlias: peanutCategory
+      onDelete: cascade

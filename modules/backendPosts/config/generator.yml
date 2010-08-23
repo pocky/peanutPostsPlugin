@@ -23,7 +23,7 @@ generator:
         
       form:
         display:
-          Post:   [title, slug, content, excerpt, category, author, status, created_at]
+          Post:   [title, slug, content, excerpt, peanut_categories_list, author, status, created_at]
           Tags:   [_tags]
         
       edit:    ~

@@ -37,7 +37,7 @@
       <span><nobr><?php 
       
         echo link_to_function("Remove '$t'", 
-        "remove_tag(".json_encode($t).", this.parentElement)", 
+        "remove_tag('".$form->getName()."',".json_encode($t).", this.parentElement)", 
         "class=removetag")
       
       ?>&nbsp;<?php echo $t ?></nobr></span>

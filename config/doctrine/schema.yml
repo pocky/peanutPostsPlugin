@@ -22,7 +22,6 @@ peanutPosts:
       fields: [title]
     Timestampable: 
     Taggable: 
-    Seoable: 
   columns:
     id:
       primary: true
